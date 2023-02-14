@@ -128,8 +128,8 @@ download and install packages.
 Exception: HTTPSConnectionPool(host='conda.anaconda.org', port=443): Max retries exceeded with url: /conda-forge/win-64/current_repodata.json (Caused by SSLError("Can't connect to HTTPS URL because the SSL module is not available."))
 
 I then close my prompt and reopened it and ran these commands
->conda deactivate<
->conda activate base<
+>conda deactivate
+>conda activate base
 >conda install -n python=3.9
 >conda create -n scipy-env scipy
 >conda activate scipy-env
