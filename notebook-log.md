@@ -129,10 +129,15 @@ Exception: HTTPSConnectionPool(host='conda.anaconda.org', port=443): Max retries
 
 I then close my prompt and reopened it and ran these commands
 >conda deactivate
+    
 >conda activate base
+    
 >conda install -n python=3.9
+    
 >conda create -n scipy-env scipy
+    
 >conda activate scipy-env
+    
 to "create a test environment"
 Also of note I had to run
 >conda deactivate
