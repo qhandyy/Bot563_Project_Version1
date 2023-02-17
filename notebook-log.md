@@ -148,3 +148,12 @@ to remove the test environment
     
 I then ran
 >conda update --all
+    
+I gave up on conda for now, and dowloaded a linux shell for windows.
+    through this I was able to easily install clustalo using
+sudo apt install clustalo
+    and similarly for muscle I used
+sudo apt install muscle
+    then to align my data I used
+clustalo --in gal10dntp.fasta --out gal10dntp.align --force --outfmt clustal --wrap 80
+    
