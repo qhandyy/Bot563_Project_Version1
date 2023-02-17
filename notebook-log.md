@@ -155,5 +155,5 @@ sudo apt install clustalo
     and similarly for muscle I used
 sudo apt install muscle
     then to align my data I used
-clustalo --in gal10dntp.fasta --out gal10dntp.align --force --outfmt clustal --wrap 80
+>clustalo --in gal10dntp.fasta --out gal10dntp.align --force --outfmt clustal --wrap 80
     
