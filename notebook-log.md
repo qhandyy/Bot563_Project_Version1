@@ -6,7 +6,9 @@ miniconda was unable to solve environment
 uninstalled miniconda
 
 Installed Anaconda via browser
-  Attmpted to run >conda install -c "bioconda/label/cf201901" busco< in the interface, but was given this error:
+  Attmpted to run 
+  >conda install -c "bioconda/label/cf201901" busco
+  in the interface, but was given this error:
   Solving environment: failed with initial frozen solve. Retrying with flexible solve.
 
 PackagesNotFoundError: The following packages are not available from current channels:
@@ -151,8 +153,11 @@ I then ran
     
 I gave up on conda for now, and dowloaded a linux shell for windows.
     through this I was able to easily install clustalo using
+    
 sudo apt install clustalo
+    
     and similarly for muscle I used
+    
 sudo apt install muscle
     then to align my data I used
 >clustalo --in gal10dntp.fasta --out gal10dntp.align --force --outfmt clustal --wrap 80
