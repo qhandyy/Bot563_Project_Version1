@@ -193,10 +193,36 @@ Now, we want to make trees from our alignments.
 I made a tree earlier, which will be in the data file, but the tips are all mislabeled and hard to understand so I redid the alignments as such.
     
 Sudo apt install mafft
-mafft -h
-mafft 
+    
+>mafft -h 
+>mafft 
     which automatically asks
 Input file? (FASTA format; Folder=/mnt/c/users/quaid)
-Gal10AA.fasta 
+>Gal10_AA.fasta 
+Output file?
+>Gal10AA.fasta
+Output format?
+  1. Clustal format / Sorted
+  2. Clustal format / Input order
+  3. Fasta format   / Sorted
+  4. Fasta format   / Input order
+  5. Phylip format  / Sorted
+  6. Phylip format  / Input order
+>3
+Strategy?
+  1. --auto
+  2. FFT-NS-1 (fast)
+  3. FFT-NS-2 (default)
+  4. G-INS-i  (accurate)
+  5. L-INS-i  (accurate)
+  6. E-INS-i  (accurate)
+>3
+Additional arguments? (--ep # --op # --kappa # etc)
+>
+command=
+"/usr/bin/mafft"  --retree 2 --reorder "gal10_AA.fasta" > "gal10AA2.fasta"
+Type Y or just enter to run this command.
+>Y
+    
 
 
