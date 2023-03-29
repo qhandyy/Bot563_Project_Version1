@@ -188,4 +188,15 @@ plot(tre, cex=.6)
 title("A simple NJ tree")
 
     This tree worked, but I think because we tried to convert Amino acids back into nucleotides the tree is trash. Everything is on the same line.
+    
+Now, we want to make trees from our alignments. 
+I made a tree earlier, which will be in the data file, but the tips are all mislabeled and hard to understand so I redid the alignments as such.
+    
+Sudo apt install mafft
+mafft -h
+mafft 
+    which automatically asks
+Input file? (FASTA format; Folder=/mnt/c/users/quaid)
+Gal10AA.fasta 
+
 
