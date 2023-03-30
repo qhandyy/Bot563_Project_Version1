@@ -60,6 +60,7 @@ Output in format: Requested package -> Available versions
 Attempted to type 
 
   >conda info 
+
 to understand my conda package and was blessed with this error:
 >>> conda info
   File "<stdin>", line 1
