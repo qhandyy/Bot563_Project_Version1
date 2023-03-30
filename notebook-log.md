@@ -164,8 +164,7 @@ sudo apt install muscle
     I then added 20 sequences to my GAL10 data because I thought it would be cool to make a larger tree.
     then to align my data I used
 >clustalo --in gal10dntp.fasta --out gal10dntp.align --force --outfmt clustal --wrap 80
-    
-    
+       
 In class we looked to create distance-based and parsimony-based trees for our data. Here are the commands I used for the parsimony tree in RStudio.
     
 library(ape)
