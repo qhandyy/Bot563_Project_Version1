@@ -152,7 +152,7 @@ I then ran
 >conda update --all
     
 I gave up on conda for now, and dowloaded a linux shell for windows.
-    through this I was able to easily install clustalo using
+    Through this I was able to easily install clustalo using
   
  ## Alignment and R ##  
   
@@ -188,7 +188,7 @@ Here are the commands I used for the distance based tree.
 >plot(tre, cex=.6)<
 >title("A simple NJ tree")<
 
-    This tree worked, but I think because we tried to convert Amino acids back into nucleotides the tree is trash. Everything is on the same line.
+This tree worked, but I think because we tried to convert Amino acids back into nucleotides the tree is quite bad, as everything is on the same line.
     
 Also, at some point between the start of this log file and making these tree, I added 15 fasta sequences to make it 35 total. There are 2-3 non yeast fungi and a duplicate, all taken off of NCBI in the file: Gal10_AA.fasta 
                         
