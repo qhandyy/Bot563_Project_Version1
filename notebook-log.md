@@ -44,7 +44,8 @@ and use the search bar at the top of the page.
 
 Attempted to run
 
-  >conda install -c bioconda busco<
+  >conda install -c bioconda busco
+
 was given this error:
 Solving environment: failed with initial frozen solve. Retrying with flexible solve.
 Solving environment: -
