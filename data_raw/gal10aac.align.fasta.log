@@ -1,0 +1,125 @@
+IQ-TREE multicore version 2.0.7 for Linux 64-bit built Jan 21 2022
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    LAPTOP-7EOHLGC8 (AVX2, FMA3, 3 GB RAM)
+Command: iqtree2 -s gal10AAC.align.fasta -m LG+G4 -redo
+Seed:    628074 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Thu Mar 30 11:21:53 2023
+Kernel:  AVX+FMA - 1 threads (4 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 4 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading alignment file gal10AAC.align.fasta ... Fasta format detected
+Alignment most likely contains protein sequences
+Alignment has 35 sequences with 1459 columns, 967 distinct patterns
+521 parsimony-informative, 425 singleton sites, 513 constant sites
+                                Gap/Ambiguity  Composition  p-value
+   1  Saccharomyces_cerevisiae         52.09%    passed     99.88%
+   2  Brettanomyces_bruxellensis       53.19%    passed     92.73%
+   3  Kluyveromyces_lactis             52.84%    passed     68.60%
+   4  Candida_margitis                 43.66%    passed     97.25%
+   5  Candida                          53.12%    failed      3.11%
+   6  Candida_pseudojiufengensis       52.98%    passed      5.62%
+   7  Candida_theae                    53.87%    passed     76.09%
+   8  Candida_oxycetoniae              53.32%    passed     87.23%
+   9  Candida_subhashii                52.98%    passed     85.68%
+  10  Candida_metapsilosis             53.87%    passed     91.77%
+  11  Saccharomyces_paradoxus          52.09%    passed     99.14%
+  12  Schizosaccharomyces_japonicus    52.71%    passed     82.55%
+  13  Schizosaccharomyces_japonicus2   55.79%    passed     88.50%
+  14  Schizosaccharomyces_pombe        51.13%    passed     78.37%
+  15  Schizosaccharomyces_osmophilus   52.91%    passed     74.97%
+  16  Kluyveromyces_marxianus          52.64%    passed     76.70%
+  17  Scheffersomyces_stipitis         52.84%    passed     99.64%
+  18  Gonapodya_sp.                    55.17%    failed      0.00%
+  19  Candida_albicans                 53.74%    passed     86.59%
+  20  Torulaspora_delbrueckii          51.82%    passed     99.67%
+  21  Zygosaccharomyces_bailii         53.67%    passed     28.66%
+  22  Lachancea_fermentati             53.05%    passed     99.69%
+  23  Zygosaccharomyces_rouxii         54.08%    passed     38.95%
+  24  Candida_parapsilosis             54.01%    passed     89.55%
+  25  Candida_viswanathii              53.39%    passed     81.78%
+  26  Brettanomyces_nanus              53.46%    passed     89.88%
+  27  Kazachstania_unispora            52.57%    passed     99.28%
+  28  Purpureocillium_lilacinum        45.58%    failed      0.00%
+  29  Kazachstania_exigua              52.43%    passed     86.78%
+  30  Clavispora_lusitaniae            53.12%    passed     96.61%
+  31  Zygosaccharomyces_mellis         54.08%    passed     53.92%
+  32  Zygotorulaspora_mrakii           52.02%    passed     96.77%
+  33  Candida_railenensis              53.74%    passed     98.98%
+  34  Debaryomyces_fabryi              52.71%    passed     12.76%
+  35  Rhizopus_azygosporus             56.96%    failed      0.00%
+WARNING: 33 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                            52.79%  4 sequences failed composition chi2 test (p-value<5%; df=19)
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.030 seconds
+
+NOTE: 21 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -30602.458
+2. Current log-likelihood: -28818.053
+3. Current log-likelihood: -28800.702
+4. Current log-likelihood: -28800.426
+Optimal log-likelihood: -28800.409
+Gamma shape alpha: 0.736
+Parameters optimization took 4 rounds (4.752 sec)
+Computing ML distances based on estimated model parameters... 0.349 sec
+WARNING: Some pairwise ML distances are too long (saturated)
+Computing BIONJ tree...
+0.034 seconds
+Log-likelihood of BIONJ tree: -28815.499
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 2.200 second
+Computing log-likelihood of 98 initial trees ... 22.689 seconds
+Current best score: -28800.409
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -28790.192
+Iteration 10 / LogL: -28792.736 / Time: 0h:1m:19s
+Iteration 20 / LogL: -28793.941 / Time: 0h:1m:53s
+Finish initializing candidate tree set (10)
+Current best tree score: -28790.192 / CPU time: 99.234
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -28800.340 / Time: 0h:2m:38s (0h:6m:27s left)
+Iteration 40 / LogL: -28790.876 / Time: 0h:3m:30s (0h:5m:29s left)
+Iteration 50 / LogL: -28790.778 / Time: 0h:4m:17s (0h:4m:28s left)
+Iteration 60 / LogL: -28791.302 / Time: 0h:5m:1s (0h:3m:29s left)
+Iteration 70 / LogL: -28791.557 / Time: 0h:5m:48s (0h:2m:36s left)
+Iteration 80 / LogL: -28790.924 / Time: 0h:6m:36s (0h:1m:45s left)
+Iteration 90 / LogL: -28791.123 / Time: 0h:7m:25s (0h:0m:55s left)
+Iteration 100 / LogL: -28791.866 / Time: 0h:8m:5s (0h:0m:4s left)
+TREE SEARCH COMPLETED AFTER 102 ITERATIONS / Time: 0h:8m:13s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -28790.192
+Optimal log-likelihood: -28790.191
+Gamma shape alpha: 0.734
+Parameters optimization took 1 rounds (0.675 sec)
+BEST SCORE FOUND : -28790.191
+Total tree length: 26.836
+
+Total number of iterations: 102
+CPU time used for tree search: 477.151 sec (0h:7m:57s)
+Wall-clock time used for tree search: 478.621 sec (0h:7m:58s)
+Total CPU time used: 492.092 sec (0h:8m:12s)
+Total wall-clock time used: 493.843 sec (0h:8m:13s)
+
+Analysis results written to: 
+  IQ-TREE report:                gal10AAC.align.fasta.iqtree
+  Maximum-likelihood tree:       gal10AAC.align.fasta.treefile
+  Likelihood distances:          gal10AAC.align.fasta.mldist
+  Screen log file:               gal10AAC.align.fasta.log
+
+Date and Time: Thu Mar 30 11:30:07 2023
