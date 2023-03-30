@@ -228,12 +228,12 @@ And ran: >clustalo --in gal10_AA.fasta --out gal10AAC.align.fasta<
 
 With these I made 4 trees, 1 of each alignment in IQtree2 and RAXml:
     
->sudo apt install iqtree<
->sudo apt install raxml<
->iqtree2 -s gal10AA.align.fasta<
->iqtree2 -s gal10AAC.align.fasta -m LG+G4<
->raxmlHPC-PTHREADS-AVX -T 2 -s gal10aa.align.fasta -n gal10aa.treefile -m PROTGAMMALG4X -p 32 [X]<
->raxmlHPC-PTHREADS-AVX -T 2 -s gal10aac.align.fasta -n gal10aac.treefile -m PROTGAMMALG4X -p 32 [X]<
+    >sudo apt install iqtree<
+    >sudo apt install raxml<
+    >iqtree2 -s gal10AA.align.fasta<
+    >iqtree2 -s gal10AAC.align.fasta -m LG+G4<
+    >raxmlHPC-PTHREADS-AVX -T 2 -s gal10aa.align.fasta -n gal10aa.treefile -m PROTGAMMALG4X -p 32 [X]<
+    >raxmlHPC-PTHREADS-AVX -T 2 -s gal10aac.align.fasta -n gal10aac.treefile -m PROTGAMMALG4X -p 32 [X]<
     
 The output files are should all be in data_raw 
 
