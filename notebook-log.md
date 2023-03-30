@@ -12,9 +12,9 @@ miniconda was unable to solve environment
 uninstalled miniconda
 
 Installed the larger program Anaconda via browser
-  Attmpted to run 
+Attmpted to run 
   
-  >conda install -c "bioconda/label/cf201901" busco
+    >conda install -c "bioconda/label/cf201901" busco
   
 in the interface, but was given this error:
 
@@ -44,7 +44,7 @@ and use the search bar at the top of the page.
 
 Attempted to run
 
-  >conda install -c bioconda busco
+   >conda install -c bioconda busco
 
 was given this error:
 Solving environment: failed with initial frozen solve. Retrying with flexible solve.
@@ -59,7 +59,7 @@ Output in format: Requested package -> Available versions
 
 Attempted to type 
 
-  >conda info 
+    >conda info 
 
 to understand my conda package and was blessed with this error:
 >>> conda info
@@ -70,17 +70,17 @@ SyntaxError: invalid syntax
   
 Used
   
-  >quit()
+    >quit()
   
 to exit the interactive pyhton shell
 Now able to type in the anaconda prompt wihtout syntax errors
                   
-  Retried >conda install -c "bioconda/label/cf201901" busco
+    >conda install -c "bioconda/label/cf201901" busco
   
 and was given the same error
 Ran 
   
-  >conda create -n BUSCO -c bioconda -c conda-forge busco=5.4.5 python=3.9.13 conda activate BUSCO
+    >conda create -n BUSCO -c bioconda -c conda-forge busco=5.4.5 python=3.9.13 conda activate BUSCO
   
 and was given this same error:
 Solving environment: failed
@@ -111,7 +111,7 @@ and use the search bar at the top of the page.
     
 Ran 
   
-  >conda install -c conda-forge -c bioconda busco=5.4.4
+    >conda install -c conda-forge -c bioconda busco=5.4.4
   
 and got this error:
 Collecting package metadata (current_repodata.json): failed
@@ -126,13 +126,13 @@ HTTP errors are often intermittent, and a simple retry will get you on your way.
 Forgot to turn the WI-FI on
 Ran 
   
-  >conda install -c conda-forge -c bioconda busco=5.4.4 
+   >conda install -c conda-forge -c bioconda busco=5.4.4 
   
 again
 It was unable to understand the environment
 I then attmpted this command 
   
-  >conda create -p /vol/bigdata/BUSCO
+   >conda create -p /vol/bigdata/BUSCO
   
 which gave me this:
 Collecting package metadata (current_repodata.json): done
@@ -153,27 +153,27 @@ Please update conda by running
 
 Proceed ([y]/n)?
 
-  >n 
+    >n 
       
 Then ran:
   
-  >conda update -n base -c defaults conda
+   >conda update -n base -c defaults conda
   
 which successfully updated conda
     
 Then I attempted this command again 
   
-  >conda create -p /vol/bigdata/BUSCO
+   >conda create -p /vol/bigdata/BUSCO
   
 which gave me the same option as above but without the notification to update
 Next I ran this 
   
-  >conda activate C:\vol\bigdata\BUSCO
+    >conda activate C:\vol\bigdata\BUSCO
   
 which activated the busco specific environment
 I then ran this 
   
-  >conda install -p /vol/bigdata/BUSCO -c conda-forge -c bioconda busco=5.4.5
+    >conda install -p /vol/bigdata/BUSCO -c conda-forge -c bioconda busco=5.4.5
   
 which gave me this error
 Collecting package metadata (current_repodata.json): failed
