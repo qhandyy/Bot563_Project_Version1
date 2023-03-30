@@ -189,6 +189,8 @@ Here are the commands I used for the distance based tree.
 
     This tree worked, but I think because we tried to convert Amino acids back into nucleotides the tree is trash. Everything is on the same line.
     
+Also, at some point between the start of this log file and making these tree, I added 15 fasta sequences to make it 35 total. There are 2-3 non yeast fungi and a duplicate, all taken off of NCBI in the file: Gal10_AA.fasta 
+    
 Now, we want to make trees from our alignments. 
 I made a tree earlier, which will be in the data file, but the tips are all mislabeled and hard to understand so I redid the alignments as such.
     
