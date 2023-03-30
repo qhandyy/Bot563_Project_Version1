@@ -255,3 +255,5 @@ The output files are should all be in data_raw
  IQtree2 is the most updated verion of the most used tree-building algorithm. It starts by building a parsimony tree and using NNI moves to find maximum likelihood trees. It also uses substitution models as references to be able to make these maximum likelihood trees. 
     
 RAxML is itself not the most updated version. I have never installed programs without using WSL so I decided I did not want to download and unpackage RAxML-NG and to just use RAxML. RAxML's creators have said that the program is maybe faster, but definitely not as accurate as iqtree. RAxML uses SPR (pruning and regrafting) to find its maximum likelihood trees. It also uses substitution models to accomplish this, with albeit less models available. 
+    
+I placed the rooted treefiles into data_clean
