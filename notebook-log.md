@@ -107,8 +107,7 @@ looking for, navigate to
 
     https://anaconda.org
 
-and use the search bar at the top of the page.
-    
+and use the search bar at the top of the page. 
 Ran 
   
     >conda install -c conda-forge -c bioconda busco=5.4.4
@@ -185,42 +184,51 @@ Exception: HTTPSConnectionPool(host='conda.anaconda.org', port=443): Max retries
 
 I then close my prompt and reopened it and ran these commands
   
->conda deactivate
+    >conda deactivate
     
->conda activate base
+    >conda activate base
     
->conda install -n python=3.9
+    >conda install -n python=3.9
     
->conda create -n scipy-env scipy
+    >conda create -n scipy-env scipy
     
->conda activate scipy-env
+    >conda activate scipy-env
     
 to "create a test environment"
 Also of note I had to run
->conda deactivate
+  
+    >conda deactivate
+  
 to leave the env before I ran
->conda env remove -n scipy-env
+  
+    >conda env remove -n scipy-env
+  
 to remove the test environment
-    In post this seems useless
+ In post this seems useless
     
 I then ran
->conda update --all
+  
+    >conda update --all
     
 I gave up on conda for now, and dowloaded a linux shell for windows.
-    Through this I was able to easily install clustalo using
   
 Basically, I never resolved this issue and didn't use BUSCO on my data. However, my data never needed any type of quality control. Basically, my data is already quality contolled because I took the data off of a public database (NCBI). The sequences are submitted after being confirmed by other like sequences of the same genes. To explain this a little bit more, if I were using genomes and aligning genomes to each other then I wouls need to use some QC site/program, but since I am using a signle gene they have built-in QC because of their nature.
   
  ## Alignment and R ##  
   
-sudo apt install clustalo
+I installed some alignment programs using  
+
+  >sudo apt install clustalo
     
-    and similarly for muscle I used
+and similarly for muscle I used
     
-sudo apt install muscle
-    I then added 20 sequences to my GAL10 data because I thought it would be cool to make a larger tree.
-    then to align my data I used
->clustalo --in gal10dntp.fasta --out gal10dntp.align --force --outfmt clustal --wrap 80
+    >sudo apt install muscle
+  
+  
+I then added 20 sequences to my GAL10 data because I thought it would be cool to make a larger tree.
+then to align my data I used
+  
+    >clustalo --in gal10dntp.fasta --out gal10dntp.align --force --outfmt clustal --wrap 80
        
 In class we looked to create distance-based and parsimony-based trees for our data. Here are the commands I used for the parsimony tree in RStudio.
     
@@ -235,19 +243,19 @@ parsimony(tre.ini, dna2)
    I am unsure why, but once the parsiomny command is used, it gives those using AA sequences an error that crashes R. 
 Here are the commands I used for the distance based tree. 
     
->library(ape)<
->library(adegenet)<
->library(phangorn)<
->dna <- fasta2DNAbin(file="gal10aaaling.fasta")<
->D <- dist.dna(dna, model="TN93")<
->tre <- nj(D)<
->tre <- ladderize(tre)<
->plot(tre, cex=.6)<
->title("A simple NJ tree")<
+>library(ape)
+>library(adegenet)
+>library(phangorn)
+>dna <- fasta2DNAbin(file="gal10aaaling.fasta")
+>D <- dist.dna(dna, model="TN93")
+>tre <- nj(D)
+>tre <- ladderize(tre)
+>plot(tre, cex=.6)
+>title("A simple NJ tree")
 
 This tree worked, but I think because we tried to convert Amino acids back into nucleotides the tree is quite bad, as everything is on the same line.
     
-Also, at some point between the start of this log file and making these tree, I added 15 fasta sequences to make it 35 total. There are 2-3 non yeast fungi and a duplicate, all taken off of NCBI in the file: Gal10_AA.fasta 
+**Also, at some point between the start of this log file and making these tree, I added 15 fasta sequences to make it 35 total. There are 2-3 non yeast fungi and a duplicate, all taken off of NCBI in the file: Gal10_AA.fasta** 
                         
 ## Tree building and realignment ##
                         
