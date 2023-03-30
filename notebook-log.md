@@ -232,26 +232,40 @@ then to align my data I used
        
 In class we looked to create distance-based and parsimony-based trees for our data. Here are the commands I used for the parsimony tree in RStudio.
     
-library(ape)
-library(phangorn)
-library(adegenet)
-dna <- fasta2DNAbin(file="gal10aaaling.fasta")
-dna2 <- as.phyDat(dna)
-tre.ini <- nj(dist.dna(dna,model="raw"))
-parsimony(tre.ini, dna2)
+    >library(ape)
+  
+    >library(phangorn)
+  
+    >library(adegenet)
+  
+    >dna <- fasta2DNAbin(file="gal10aaaling.fasta")
+       
+    >dna2 <- as.phyDat(dna)
+  
+    >tre.ini <- nj(dist.dna(dna,model="raw"))
+           
+    >parsimony(tre.ini, dna2)
     
    I am unsure why, but once the parsiomny command is used, it gives those using AA sequences an error that crashes R. 
 Here are the commands I used for the distance based tree. 
     
->library(ape)
->library(adegenet)
->library(phangorn)
->dna <- fasta2DNAbin(file="gal10aaaling.fasta")
->D <- dist.dna(dna, model="TN93")
->tre <- nj(D)
->tre <- ladderize(tre)
->plot(tre, cex=.6)
->title("A simple NJ tree")
+    >library(ape)
+  
+    >library(adegenet)
+  
+    >library(phangorn)
+  
+    >dna <- fasta2DNAbin(file="gal10aaaling.fasta")
+            
+    >D <- dist.dna(dna, model="TN93")
+          
+    >tre <- nj(D)
+            
+    >tre <- ladderize(tre)
+            
+    >plot(tre, cex=.6)
+  
+    >title("A simple NJ tree")
 
 This tree worked, but I think because we tried to convert Amino acids back into nucleotides the tree is quite bad, as everything is on the same line.
     
