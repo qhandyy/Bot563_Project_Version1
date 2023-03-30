@@ -177,30 +177,29 @@ parsimony(tre.ini, dna2)
    I am unsure why, but once the parsiomny command is used, it gives those using AA sequences an error that crashes R. 
 Here are the commands I used for the distance based tree. 
     
-library(ape)
-library(adegenet)
-library(phangorn)
-dna <- fasta2DNAbin(file="gal10aaaling.fasta")
-D <- dist.dna(dna, model="TN93")
-tre <- nj(D)
-tre <- ladderize(tre)
-plot(tre, cex=.6)
-title("A simple NJ tree")
+>library(ape)<
+>library(adegenet)<
+>library(phangorn)<
+>dna <- fasta2DNAbin(file="gal10aaaling.fasta")<
+>D <- dist.dna(dna, model="TN93")<
+>tre <- nj(D)<
+>tre <- ladderize(tre)<
+>plot(tre, cex=.6)<
+>title("A simple NJ tree")<
 
     This tree worked, but I think because we tried to convert Amino acids back into nucleotides the tree is trash. Everything is on the same line.
     
 Now, we want to make trees from our alignments. 
 I made a tree earlier, which will be in the data file, but the tips are all mislabeled and hard to understand so I redid the alignments as such.
     
-Sudo apt install mafft
-    
->mafft -h 
->mafft 
+>Sudo apt install mafft<
+>mafft -h<
+>mafft <
     which automatically asks
 Input file? (FASTA format; Folder=/mnt/c/users/quaid)
->Gal10_AA.fasta 
+>Gal10_AA.fasta< 
 Output file?
->Gal10AA.fasta
+>Gal10AA.align.fasta<
 Output format?
   1. Clustal format / Sorted
   2. Clustal format / Input order
@@ -208,7 +207,7 @@ Output format?
   4. Fasta format   / Input order
   5. Phylip format  / Sorted
   6. Phylip format  / Input order
->3
+>3<
 Strategy?
   1. --auto
   2. FFT-NS-1 (fast)
@@ -216,14 +215,25 @@ Strategy?
   4. G-INS-i  (accurate)
   5. L-INS-i  (accurate)
   6. E-INS-i  (accurate)
->3
+>3<
 Additional arguments? (--ep # --op # --kappa # etc)
->
+><
 command=
-"/usr/bin/mafft"  --retree 2 --reorder "gal10_AA.fasta" > "gal10AA2.fasta"
+"/usr/bin/mafft"  --retree 2 --reorder "gal10_AA.fasta" > "gal10AA.align.fasta"
 Type Y or just enter to run this command.
->Y
+>Y<
     
-I then ran this in 
+I installed clustalo with: >sudo apt install clustalo< 
+And ran: >clustalo --in gal10_AA.fasta --out gal10AAC.align.fasta<
 
+With these I made 4 trees, 1 of each alignment in IQtree2 and RAXml:
+    
+>sudo apt install iqtree<
+>sudo apt install raxml<
+>iqtree2 -s gal10AA.align.fasta<
+>iqtree2 -s gal10AAC.align.fasta -m LG+G4<
+>raxmlHPC-PTHREADS-AVX -T 2 -s gal10aa.align.fasta -n gal10aa.treefile -m PROTGAMMALG4X -p 32 [X]<
+>raxmlHPC-PTHREADS-AVX -T 2 -s gal10aac.align.fasta -n gal10aac.treefile -m PROTGAMMALG4X -p 32 [X]<
+    
+The output files are should all be in data_raw 
 
