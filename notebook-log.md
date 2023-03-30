@@ -1,5 +1,5 @@
 Copied 20 fasta files from NCBI of GAL10 genes from separate yeast species
-Decided Busco would be best for QC
+Decided Busco would be best for Quality control
 
 Downloaded miniconda for busco installation
 miniconda was unable to solve environment
@@ -108,7 +108,7 @@ Please update conda by running
 
     $ conda update -n base -c defaults conda
 
-
+Basically, I never resolved this issue and didn't use BUSCO on my data. However, my data never needed any type of quality control. Basically, my data is already quality contolled because I took the data off of a public database (NCBI). The sequences are submitted after being confirmed by other like sequences of the same genes. To explain this a little bit more, if I were using genomes and aligning genomes to each other then I wouls need to use some QC site/program, but since I am using a signle gene they have buil-in QC because of their nature.
 
 ## Package Plan ##
 
@@ -153,7 +153,9 @@ I then ran
     
 I gave up on conda for now, and dowloaded a linux shell for windows.
     through this I was able to easily install clustalo using
-    
+  
+ ## Alignment and R ##  
+  
 sudo apt install clustalo
     
     and similarly for muscle I used
@@ -190,7 +192,9 @@ Here are the commands I used for the distance based tree.
     This tree worked, but I think because we tried to convert Amino acids back into nucleotides the tree is trash. Everything is on the same line.
     
 Also, at some point between the start of this log file and making these tree, I added 15 fasta sequences to make it 35 total. There are 2-3 non yeast fungi and a duplicate, all taken off of NCBI in the file: Gal10_AA.fasta 
-    
+                        
+## Tree building and realignment ##
+                        
 Now, we want to make trees from our alignments. 
 I made a tree earlier, which will be in the data file, but the tips are all mislabeled and hard to understand so I redid the alignments as such.
     
