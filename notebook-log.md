@@ -7,6 +7,8 @@ The goal of this project is to build phylogenies from 20-100 gal10 gene sequence
 To start this project, I copied 20 fasta files from NCBI of GAL10 genes from diferent yeast species
 Then I decided Busco would be best for Quality control
 
+## Trial and Error ##
+
 Downloaded miniconda for busco installation
 miniconda was unable to solve environment
 uninstalled miniconda
