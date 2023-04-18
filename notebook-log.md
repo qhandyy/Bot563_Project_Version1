@@ -348,3 +348,48 @@ My files seem like they are all over the place, so here I will clarify the flow 
 All of my files thus far are inside of data_raw and data_clean. We should start within data_raw to find Gal10AA.fasta. This is the file that contains all 35 of my gal10 sequences with correct taxa names. From this, alignments were created with mafft and then clustalo. To differentiate these alignments I added a C into Gal10AAC.align.fasta to show that file is the clustalo output and the other more standard Gal10AA.align.fasta is the mafft output file. Also within the base level of the data_raw folder residesa nexus format file used for mrbayes. The folders within data_raw are pretty self explanatory, containing the respective output files from tree running softwares RAXml and IQtree2 on each respective alignment. 
 Then, data_clean contains .pdf files created on Interactive Tree of Life (ITOL, a tree viewer used to visualize trees from their paranthetical output files.) Each one has a self explanatory name, with an added C to specify clustalo and .RAX to specify RAXml was used for that file. 
   
+  ## MrBayes ##
+  
+Inside of the ubuntu interface I installed mrbayes using;
+  
+  >sudo apt install mrbayes
+  
+I then opened the mafft output file Gal10AA.align.fasta in UNIPRO Ugene and copied/downloaded it into a nexus format using that program. I attempted to use the block provided for us;
+  
+  begin mrbayes;
+ set autoclose=yes;
+ prset brlenspr=unconstrained:exp(10.0);
+ prset shapepr=exp(1.0);
+ prset tratiopr=beta(1.0,1.0);
+ prset statefreqpr=dirichlet(1.0,1.0,1.0,1.0);
+ lset nst=2 rates=gamma ngammacat=4;
+ mcmcp ngen=10000 samplefreq=10 printfreq=100 nruns=1 nchains=3 savebrlens=yes;
+end;
+  
+However, I received an error;
+  
+        Too many taxa in matrix
+      Deleting previously defined characters
+      Deleting previously defined taxa
+      Error when setting parameter "MatrixInfo" (2)
+      The error occurred when reading char. 1-5 on line 43
+         in the file 'gal10aacopy.nex'
+
+   Returning execution to command line ...
+
+   Error in command "Execute"
+  
+line 43 reads; begin mrbayes;
+  I deleted the portion of the nexus file that specified where the reading of the file ended and the beginning of mrbayes begun, the program read them all together and couldn't process the transition. Thus I added that back to the block and made some changes to make it more fitting to amino acid data;
+  
+  ;
+end;
+begin mrbayes;
+ set autoclose=yes;
+ prset brlenspr=unconstrained:exp(10.0);
+ prset shapepr=exp(1.0);
+ prset aamodelpr=mixed;
+ lset nst=2 rates=gamma ngammacat=6;
+ mcmcp ngen=2500000 samplefreq=100 printfreq=1000 nruns=2 nchains=3 savebrlens=yes;
+end;
+  
