@@ -341,3 +341,9 @@ The output files are should all be in data_raw
 RAxML is itself not the most updated version. I have never installed programs without using WSL so I decided I did not want to download and unpackage RAxML-NG and to just use RAxML. RAxML's creators have said that the program is maybe faster, but definitely not as accurate as iqtree. RAxML uses SPR (pruning and regrafting) to find its maximum likelihood trees. It also uses substitution models to accomplish this, with albeit less models available. 
     
 I placed the rooted treefiles into data_clean
+  
+  ## Organization ##
+  
+My files seem like they are all over the place, so here I will clarify the flow of my files and folders.
+All of my files thus far are inside of data_raw and data_clean. We should start within data_raw to find Gal10AA.fasta. This is the file that contains all 35 of my gal10 sequences with correct taxa names. From this, alignments were created with mafft and then clustalo. To differentiate these alignments I added a C into Gal10AAC.align.fasta to show that file is the clustalo output and the other more standard Gal10AA.align.fasta is the mafft output file. Also within the base level of the data_raw folder residesa nexus format file used for mrbayes. The folders within data_raw are pretty self explanatory, containing the respective output files from tree running softwares RAXml and IQtree2 on each respective alignment.
+  
