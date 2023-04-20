@@ -366,7 +366,10 @@ I then opened the mafft output file Gal10AA.align.fasta in UNIPRO Ugene and copi
  mcmcp ngen=10000 samplefreq=10 printfreq=100 nruns=1 nchains=3 savebrlens=yes;
 end;
   
-However, I received an error;
+However, I received an error.
+  
+  >mb
+  >exe gal10AA.align_copy1.nex
   
         Too many taxa in matrix
       Deleting previously defined characters
@@ -392,4 +395,21 @@ begin mrbayes;
  lset nst=2 rates=gamma ngammacat=6;
  mcmcp ngen=2500000 samplefreq=100 printfreq=1000 nruns=2 nchains=3 savebrlens=yes;
 end;
+  
+I was able to run this command, but I received a different error when attempting to run mcmc:
+  
+  >mb
+  >exe gal10AA.align_copy1.nex
+  >mcmc
+  
+  Running benchmarks to automatically select fastest BEAGLE resource... failed to open /dev/dri/renderD128: Permission denied
+failed to open /dev/dri/renderD128: Permission denied
+
+OpenCL error: CL_DEVICE_NOT_FOUND from file <GPUInterfaceOpenCL.cpp>, line 122.
+  
+I figured this was a driver error, so I installed gcc using;
+  
+  >sudo apt install gcc
+  
+But had no luck running the program again. I attempted to use something to build Beagle, but that didn't seem to work either. I'm looking into how wsl interacts with opencl but am having no luck deciding if it's really worth installing a program like that. 
   
