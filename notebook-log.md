@@ -348,6 +348,14 @@ My files seem like they are all over the place, so here I will clarify the flow 
 All of my files thus far are inside of data_raw and data_clean. We should start within data_raw to find Gal10AA.fasta. This is the file that contains all 35 of my gal10 sequences with correct taxa names. From this, alignments were created with mafft and then clustalo. To differentiate these alignments I added a C into Gal10AAC.align.fasta to show that file is the clustalo output and the other more standard Gal10AA.align.fasta is the mafft output file. Also within the base level of the data_raw folder residesa nexus format file used for mrbayes. The folders within data_raw are pretty self explanatory, containing the respective output files from tree running softwares RAXml and IQtree2 on each respective alignment. 
 Then, data_clean contains .pdf files created on Interactive Tree of Life (ITOL, a tree viewer used to visualize trees from their paranthetical output files.) Each one has a self explanatory name, with an added C to specify clustalo and .RAX to specify RAXml was used for that file. 
   
+  ## Astral ##
+  
+There is no direct installation for Astral, so I downloaded a zip file to my computer and unzipped to be able to use the program. I relocated my mafft iqtree tree to the folder for this analysis. I used 
+  
+  >java -jar astral.5.7.8.jar -i Gal10AA.align.fasta.treefile
+  
+This worked and gave me an astral file output (Gal10AA.astral), but its usage is limited since my data only contain 1 gene so the coalescent has no way of heightening my data. I took a photo of the tree and added into the data_clean folder in the repository as well. 
+  
   ## MrBayes ##
   
 Inside of the ubuntu interface I installed mrbayes using;
