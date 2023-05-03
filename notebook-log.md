@@ -420,4 +420,67 @@ I figured this was a driver error, so I installed gcc using;
   >sudo apt install gcc
   
 But had no luck running the program again. I attempted to use something to build Beagle, but that didn't seem to work either. I'm looking into how wsl interacts with opencl but am having no luck deciding if it's really worth installing a program like that. 
+  Average standard deviation of split frequencies: 0.008882
+
+   Analysis completed in 3 hours 48 mins 33 seconds
+   Analysis used 13479.07 seconds of CPU time
+   Likelihood of best state for "cold" chain of run 1 was -29933.69
+   Likelihood of best state for "cold" chain of run 2 was -29934.34
+
+   Acceptance rates for the moves in the "cold" chain of run 1:
+      With prob.   (last 1000)   chain accepted proposals by move
+          2.2 %     (  1 %)     ExtSPR(Tau,V)
+          1.7 %     (  2 %)     ExtTBR(Tau,V)
+          3.0 %     (  2 %)     NNI(Tau,V)
+          2.6 %     (  2 %)     ParsSPR(Tau,V)
+          3.1 %     (  2 %)     ParsTBR(Tau,V)
+         26.3 %     ( 25 %)     Multiplier(V)
+         17.9 %     ( 20 %)     Nodeslider(V)
+          3.8 %     (  4 %)     TLMultiplier(V)
+          0.0 %     (  0 %)     Uniform(Aamodel)
+
+   Acceptance rates for the moves in the "cold" chain of run 2:
+      With prob.   (last 1000)   chain accepted proposals by move
+          2.1 %     (  2 %)     ExtSPR(Tau,V)
+          1.7 %     (  2 %)     ExtTBR(Tau,V)
+          2.7 %     (  3 %)     NNI(Tau,V)
+          2.2 %     (  2 %)     ParsSPR(Tau,V)
+          2.9 %     (  3 %)     ParsTBR(Tau,V)
+         26.4 %     ( 27 %)     Multiplier(V)
+         18.0 %     ( 17 %)     Nodeslider(V)
+          3.9 %     (  4 %)     TLMultiplier(V)
+          0.0 %     (  0 %)     Uniform(Aamodel)
+
+   Chain swap information for run 1:
+
+                1       2       3
+        --------------------------
+      1 |            0.68    0.43
+      2 |  166915            0.71
+      3 |  166484  166601
+
+   Chain swap information for run 2:
+
+                1       2       3
+        --------------------------
+      1 |            0.66    0.40
+      2 |  166095            0.68
+      3 |  166911  166994
+
+   Upper diagonal: Proportion of successful state exchanges between chains
+   Lower diagonal: Number of attempted state exchanges between chains
+
+   Chain information:
+
+     ID -- Heat
+    -----------
+      1 -- 1.00  (cold chain)
+      2 -- 0.91
+      3 -- 0.83
+
+   Heat = 1 / (1 + T * (ID - 1))
+      (where T = 0.10 is the temperature and ID is the chain number)
+
+
+
   
