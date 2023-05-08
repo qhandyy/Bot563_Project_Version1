@@ -422,6 +422,14 @@ I figured this was a driver error, so I installed gcc using;
 But had no luck running the program again. I attempted to use something to build Beagle, but that didn't seem to work either. I'm looking into how wsl interacts with opencl but am having no luck deciding if it's really worth installing a program like that. 
   Average standard deviation of split frequencies: 0.008882
 
+Finally, I was able to run Mrbayes. I got access to MrBayes in the UWMadison cluster vis Putty and WinSCP. I changed the settings to only run 500,000 instead of 2,500,000 to save time. After inputting;
+  
+  >mb
+  >exe gal10AA.align_sopy1.nex
+  >mcmc 
+  
+This was the output I got. 
+  
    Analysis completed in 3 hours 48 mins 33 seconds
    Analysis used 13479.07 seconds of CPU time
    Likelihood of best state for "cold" chain of run 1 was -29933.69
@@ -481,7 +489,34 @@ But had no luck running the program again. I attempted to use something to build
    Heat = 1 / (1 + T * (ID - 1))
       (where T = 0.10 is the temperature and ID is the chain number)
 
+To get a consensus tree I used 
+  
+  >sump nrun=2
+  >sumt nrun=2
+  
+but I got an error;
+  
+     Summarizing trees in files "Gal10AA.align_copy1.nex.run1.t" and "Gal10AA.align_copy1.nex.run2.t"
+   Using relative burnin ('relburnin=yes'), discarding the first 25 % of sampled trees
+   Writing statistics to files Gal10AA.align_copy1.nex.<parts|tstat|vstat|trprobs|con>
+   Examining first file ...
+   Found one tree block in file "Gal10AA.align_copy1.nex.run1.t" with 5001 trees in last block
+   Expecting the same number of trees in the last tree block of all files
 
+   Tree reading status:
+
+   0      10      20      30      40      50      60      70      80      90     100
+   v-------v-------v-------v-------v-------v-------v-------v-------v-------v-------v
+   ***********   Taxon 1 should not be in sampled tree
+   Error in command "Tree"
+   Error in command "Tree"
+
+ I tried for a couple hours to solve this issue in multiple ways, but I ended up finding out that the output files missed an underscore (_) in the first taxon. Both run1.t and run2.t files had missed this underscore. Once I added it back I again ran
+  
+  >sump nrun=2
+  >sumt nrun=2
+  
+and finally I got it to run.
 
      Setting sumt nruns to 2
    Summarizing trees in files "Gal10AA.align_copy1.nex.run1.t" and "Gal10AA.align_copy1.nex.run2.t"
@@ -953,4 +988,4 @@ But had no luck running the program again. I attempted to use something to build
       95 % credible set contains 69 trees
       99 % credible set contains 182 trees
 
-
+You should have seen my face when it ran. Anyways, I can see this makes the repository look pretty bad, but I think the trees on here are pretty helpful to have so I will keep them on here until I can figure out how to format them better for github to understand. The picture of the tree is in data_clean named; MrBayesGal10AA.pdf and the other files I will put into their own folder in data_raw. I can't believe I actually got MrBayes to work.
